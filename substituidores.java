@@ -220,6 +220,7 @@ public class substituidores {
       else{
         for(int k = 0; k < memoria.size(); k++){
           if(((estrutura)memoria.get(k)).referencia > 0) ((estrutura)memoria.get(k)).referencia --;
+        atualizaçao = 0;
         }
       }
     }
