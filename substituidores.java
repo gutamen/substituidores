@@ -210,18 +210,20 @@ public class substituidores {
             break;
           }
         }
-        if(if(quemRemove == -1){
+        if(quemRemove == -1){
           for(int k = 0; memoria.size() > k; k++){
             if(!((estrutura)memoria.get(k)).referencia[0] && ((estrutura)memoria.get(k)).referencia[1]){
             quemRemove = k;
             break;
+            }
           }
         }
-quemRemove == -1){
+        if(quemRemove == -1){
           for(int k = 0; memoria.size() > k; k++){
             if(!((estrutura)memoria.get(k)).referencia[0] && ((estrutura)memoria.get(k)).referencia[1]){
             quemRemove = k;
             break;
+            }
           }
         }
         if(quemRemove == -1){
@@ -229,6 +231,7 @@ quemRemove == -1){
             if(((estrutura)memoria.get(k)).referencia[0] && !((estrutura)memoria.get(k)).referencia[1]){
             quemRemove = k;
             break;
+            }
           }
         }
         if(quemRemove == -1){
@@ -236,9 +239,9 @@ quemRemove == -1){
             if(((estrutura)memoria.get(k)).referencia[0] && ((estrutura)memoria.get(k)).referencia[1]){
             quemRemove = k;
             break;
+            }
           }
         }
-
 
         memoria.remove(quemRemove);
         memoria.push(new estrutura(endereços.get(i).substring(0,19)));
@@ -253,7 +256,7 @@ quemRemove == -1){
   }
 
 }
-
+      
 class estrutura{
   public String endereço = new String();
   public Boolean referencia[] = {true, false};  // Considerando 2 bits de referencia 
