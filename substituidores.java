@@ -176,7 +176,7 @@ public class substituidores {
   }
 
   public static int lruAproximado(ArrayList<String> endereços, int tamanhoFrame){
-    int erros = 0, atualizaçao = atualizaçaumLrua;
+    int erros = 0, atualizaçao = 0;
     Stack memoria = new Stack<estrutura>();
 
     
@@ -194,8 +194,7 @@ public class substituidores {
       } 
 
       if(existe){
-        memoria.remove(onde);
-        memoria.push(new estrutura(endereços.get(i).substring(0,19)));
+        ((estrutura)memoria.get(onde)).referencia[0] = true; 
 
       }
       else if(memoria.size() < tamanhoFrame){
@@ -248,6 +247,14 @@ public class substituidores {
         erros++;
 
       }
+      atualizaçao++;
+      if(atualizaçao == atualizaçaumLrua){
+        atualizaçao = 0;
+        for(int k = 0; k < memoria.size(); k++){
+          ((estrutura)memoria.get(k)).referencia[1] = ((estrutura)memoria.get(k)).referencia[0];
+          ((estrutura)memoria.get(k)).referencia[0] = false;
+        }
+      }
       
       
     }
@@ -259,7 +266,7 @@ public class substituidores {
       
 class estrutura{
   public String endereço = new String();
-  public Boolean referencia[] = {true, false};  // Considerando 2 bits de referencia 
+  public Boolean referencia[] = {false, false};  // Considerando 2 bits de referencia 
   public estrutura(String _S){
     this.endereço = _S;
   }
