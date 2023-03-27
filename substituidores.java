@@ -127,8 +127,8 @@ public class substituidores {
       //Nesse ponto o arquivo está convertido para uma lista de Strings com 32 valores
         
     
-      if(tipoDeSubstituiçao.equals("lrua")) System.out.println(lruAproximado(endereços, tamanhoFrame));
-      if(tipoDeSubstituiçao.equals("lru")) System.out.println(lru(endereços, tamanhoFrame));
+      if(tipoDeSubstituiçao.equals("lrua")) System.out.println("Erros de memoria = " + lruAproximado(endereços, tamanhoFrame));
+      if(tipoDeSubstituiçao.equals("lru")) System.out.println("Erros de memoria = " + lru(endereços, tamanhoFrame));
         
       /*for(int i = 0; endereços.size() > i; i++){
         System.out.println(endereços.get(i).toString()+ " " + (endereços.get(i).toString().length()));
